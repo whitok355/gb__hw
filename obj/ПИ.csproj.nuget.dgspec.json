@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\31391\\Desktop\\ПИ\\ПИ.csproj": {}
+    "C:\\Users\\31391\\Desktop\\New\\gb__hw\\ПИ.csproj": {}
   },
   "projects": {
-    "C:\\Users\\31391\\Desktop\\ПИ\\ПИ.csproj": {
+    "C:\\Users\\31391\\Desktop\\New\\gb__hw\\ПИ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\31391\\Desktop\\ПИ\\ПИ.csproj",
+        "projectUniqueName": "C:\\Users\\31391\\Desktop\\New\\gb__hw\\ПИ.csproj",
         "projectName": "ПИ",
-        "projectPath": "C:\\Users\\31391\\Desktop\\ПИ\\ПИ.csproj",
+        "projectPath": "C:\\Users\\31391\\Desktop\\New\\gb__hw\\ПИ.csproj",
         "packagesPath": "C:\\Users\\31391\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\31391\\Desktop\\ПИ\\obj\\",
+        "outputPath": "C:\\Users\\31391\\Desktop\\New\\gb__hw\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\31391\\AppData\\Roaming\\NuGet\\NuGet.Config"
