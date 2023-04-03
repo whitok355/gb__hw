@@ -1,33 +1,83 @@
-﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+// m = 3, n = 4.
+// 0,5 7 -2 -0,2
+// 1 -3,3 8 -9,9
+// 8 7,8 -7,1 9
 
-// 0, 7, 8, -2, -2 -> 2
+int row;
+int col;
 
-// 1, -7, 567, 89, 223-> 3
+Console.Write("Введите число строк");
+int.TryParse(Console.ReadLine(), out row);
+Console.Write("Введите число столбцов");
+int.TryParse(Console.ReadLine(), out col);
 
-// int quantity;
+int[,] arr = new int[row, col];
+FillArr(arr);
+PrintArray(arr);
+void FillArr(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(10);
+        }
+    }
+}
 
-// Console.Write("Укажите сколько чисел вы хотите ввести");
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j< array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j]);
+        }
+        Console.WriteLine();
+    }
+}
 
-// int.TryParse(Console.ReadLine(), out quantity);
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 17 -> такого числа в массиве нет
 
-// int[] arrNumber = new int[quantity];
+int findRow, findCol;
+Console.Write("Введите строку искомого числа ");
+int.TryParse(Console.ReadLine(), out findRow);
+Console.Write("Введите столбец искомого числа ");
+int.TryParse(Console.ReadLine(), out findCol);
 
-// for (int i = 0; i < arrNumber.Length; i++)
-// {
-//     Console.Write($"Введите число под номером {i+1}");
-//     int.TryParse(Console.ReadLine(), out arrNumber[i]);
-// }
+int res = FindValue(arr, findRow-1, findCol-1);
 
-// Console.WriteLine($"Вы ввели {CalcCount(arrNumber)} чисел больше 0");
+int FindValue(int[,] array, int row, int col)
+{
+    return array[row, col];
+}
 
-// int CalcCount(int[] arr)
-// {
-//     int res =0;
-//     for (int i = 0; i < arr.Length; i++)
-//         if(arr[i]> 0) res +=1;
-//     return res;
-// }
+Console.WriteLine(res);
 
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
-// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+Calc(arr);
+
+void Calc(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        int res = 0;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            res += array[i, j];
+        }
+        Console.WriteLine(res);
+    }
+}
