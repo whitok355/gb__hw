@@ -1,74 +1,68 @@
-﻿// Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
-// Например, задан массив:
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-// В итоге получается вот такой массив:
-// 7 4 2 1
-// 9 5 3 2
-// 8 4 4 2
+﻿// Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
 
-// int row, col;
+// N = 5 -> "5, 4, 3, 2, 1"
+// N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
-// Console.Write("Введите количество строк");
-// int.TryParse(Console.ReadLine(), out row);
-// Console.Write("Введите количество столбцов");
-// int.TryParse(Console.ReadLine(), out col);
+// int num;
 
-// int[,] arr = new int[row, col];
+// Console.Write("Please enter number ");
+// int.TryParse(Console.ReadLine(), out num);
 
-// FillArr();
-// PrintArr();
-// SortArr();
-// PrintArr();
+// PrintNum(num);
 
-// void FillArr()
+// void PrintNum(int val)
 // {
-//     for (int i = 0; i < arr.GetLength(0); i++)
+//     if(val > 0)
 //     {
-//         for (int j = 0; j < arr.GetLength(1); j++)
-//         {
-//             arr[i,j] = new Random().Next(10);
-//         }
+//         Console.WriteLine(val);
+//         PrintNum(val - 1);
 //     }
 // }
 
-// void SortArr()
+// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+// M = 1; N = 15 -> 120
+// M = 4; N = 8. -> 30
+
+// int m, n;
+
+// Console.Write("Please anter number M");
+// int.TryParse(Console.ReadLine(), out m);
+// Console.Write("Please anter number N");
+// int.TryParse(Console.ReadLine(), out n);
+
+// FindMax();
+
+// void FindMax()
 // {
-//     for (int i = 0; i < arr.GetLength(0); i++)
+//     int max = m > n ? m : n;
+//     int min = m < n ? m : n;
+//     int sum = min;
+//     while(min < max)
 //     {
-//         for (int j = 0; j < arr.GetLength(1) - 1; j++)
-//         {
-//             for (int z = 0; z < arr.GetLength(1) - 1; z++)
-//             {
-//                 if (arr[i, z] < arr[i, z + 1]) //для изменения сортировки поменять знак < на противоположный
-//                 {
-//                     int temp = 0;
-//                     temp = arr[i, z];
-//                     arr[i, z] = arr[i, z + 1];
-//                     arr[i, z + 1] = temp;
-//                 }
-//             }
-//         }
+//         sum += min + 1;
+//         min++;
 //     }
+//     Console.WriteLine(sum);
 // }
 
-// void PrintArr()
+// Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+// m = 2, n = 3 -> A(m,n) = 9
+// m = 3, n = 2 -> A(m,n) = 29
+
+// int m, n;
+
+// Console.Write("Please anter number M");
+// int.TryParse(Console.ReadLine(), out m);
+// Console.Write("Please anter number N");
+// int.TryParse(Console.ReadLine(), out n);
+
+// int resAck = Ack(m,n);
+
+// int Ack(int m, int n)
 // {
-//     for (int i = 0; i < arr.GetLength(0); i++)
-//     {
-//         for (int k = 0; k < arr.GetLength(1); k++)
-//         {
-//             Console.Write(arr[i,k]);
-//         }
-//         Console.WriteLine();
-//     }
+//   if (m == 0) return n + 1;
+//   else if (n == 0) return Ack(m - 1, 1);
+//   else return Ack(m - 1, Ack(m, n - 1));
 // }
 
-// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
-// Например, задан массив:
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-// 5 2 6 7
-// Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
+// Console.WriteLine(resAck);
